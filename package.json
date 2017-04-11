@@ -1,0 +1,40 @@
+{
+  "name": "javasctest",
+  "version": "1.0.0",
+  "description": "Java script tests",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "babel-node src/startMessage.js",
+    "start": "npm-run-all --parallel security-check open-server",
+    "lint": "eslint webpack.config.* src",
+    "open-server": "babel-node src/srcServer.js",
+    "security-check": "nsp check",
+    "tests": "mocha --reporter progress build/testSetup.js \"src/**/*.test.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raont/JavaScTest.git"
+  },
+  "author": "Nageswara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raont/JavaScTest/issues"
+  },
+  "homepage": "https://github.com/raont/JavaScTest#readme",
+  "dependencies": {
+    "open": "0.0.5",
+    "webpack": "^2.1.0-beta.22"
+  },
+  "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.24.0",
+    "babel-preset-latest": "^6.24.0",
+    "chai": "^3.5.0",
+    "chalk": "^1.1.3",
+    "eslint": "^3.19.0",
+    "mocha": "^3.2.0",
+    "npm-run-all": "^4.0.2",
+    "webpack": "^2.1.0-beta.22",
+    "webpack-dev-middleware": "^1.10.1"
+  }
+}
